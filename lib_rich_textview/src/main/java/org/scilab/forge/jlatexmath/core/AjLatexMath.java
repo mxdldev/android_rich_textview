@@ -11,9 +11,10 @@ public class AjLatexMath {
 
     private static Context mContext;
     private static Paint st;
-    private static int latexColor; // 公式的颜色
-    private static int textColor; // 普通文字的颜色
+    private static int latexLetterColor; // LaTex公式字符的颜色
+    private static int latexChineseColor; // LaTex公式文字的颜色
     private static int textSize; // 字体的大小
+    private static int textColor; // 字体颜色
     private static Typeface typeface; // 字体
     private static float lineSpace; // 行间距
 
@@ -22,13 +23,13 @@ public class AjLatexMath {
     }
 
     private AjLatexMath() {
-        latexColor = Color.parseColor("#3F2E26");
-        textColor = Color.parseColor("#7a7a7a");
+        latexLetterColor = Color.parseColor("#3F2E26");
+        latexChineseColor = Color.parseColor("#7a7a7a");
         textSize = 18;
 
         st = new Paint();
         st.setStyle(Style.FILL_AND_STROKE);
-        st.setColor(latexColor);
+        st.setColor(latexLetterColor);
         st.setStrokeWidth(0);
     }
 
@@ -59,9 +60,9 @@ public class AjLatexMath {
         return st.getFontSpacing();
     }
 
-    public AjLatexMath setTextColor(String textColor) {
+    public AjLatexMath setLatexChineseColor(String textColor) {
         try {
-            this.textColor = Color.parseColor(textColor);
+            this.latexChineseColor = Color.parseColor(textColor);
         } catch (IllegalArgumentException e) {
             // 处理颜色解析异常
             e.printStackTrace();
@@ -69,10 +70,10 @@ public class AjLatexMath {
         return this;
     }
 
-    public AjLatexMath setLatexColor(String latexColor) {
+    public AjLatexMath setLatexLetterColor(String latexColor) {
         try {
-            this.latexColor = Color.parseColor(latexColor);
-            st.setColor(this.latexColor);
+            this.latexLetterColor = Color.parseColor(latexColor);
+            st.setColor(this.latexLetterColor);
         } catch (IllegalArgumentException e) {
             // 处理颜色解析异常
             e.printStackTrace();
@@ -82,6 +83,13 @@ public class AjLatexMath {
 
     public AjLatexMath setTextSize(int size) {
         this.textSize = size;
+        return this;
+    }
+    public AjLatexMath setTextColor(String textColor) {
+        try {
+            this.textColor = Color.parseColor(textColor);
+        } catch (Exception e) {
+        }
         return this;
     }
 
@@ -95,12 +103,12 @@ public class AjLatexMath {
         return this;
     }
 
-    public static int getTextColor() {
-        return textColor;
+    public static int getLatexChineseColor() {
+        return latexChineseColor;
     }
 
-    public static int getLatexColor() {
-        return latexColor;
+    public static int getLatexLetterColor() {
+        return latexLetterColor;
     }
 
     public static int getTextSize() {
@@ -113,5 +121,9 @@ public class AjLatexMath {
 
     public static float getLineSpace() {
         return lineSpace;
+    }
+
+    public static int getTextColor() {
+        return textColor;
     }
 }

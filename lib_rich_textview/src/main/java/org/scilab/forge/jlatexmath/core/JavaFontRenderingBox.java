@@ -30,7 +30,6 @@ package org.scilab.forge.jlatexmath.core;
 
 import android.content.res.AssetManager;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Rect;
@@ -103,7 +102,7 @@ public class JavaFontRenderingBox extends Box {
 		float w = st.getStrokeWidth();
 		Style s = st.getStyle();
 		Typeface f = st.getTypeface();
-		st.setColor(AjLatexMath.getTextColor());
+		st.setColor(AjLatexMath.getLatexChineseColor());
 		st.setStrokeWidth(0);//
 		st.setStyle(Style.FILL_AND_STROKE);
 		st.setTypeface(font);

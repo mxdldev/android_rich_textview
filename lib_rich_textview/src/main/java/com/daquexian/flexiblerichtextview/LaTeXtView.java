@@ -84,6 +84,7 @@ public class LaTeXtView extends TextView {
         setTextSize(ajLatexMath.getTextSize());
         setTypeface(ajLatexMath.getTypeface());
         setLineSpacing(0, ajLatexMath.getLineSpace());
+        setTextColor(ajLatexMath.getTextColor());
         setText(builder);
     }
 
