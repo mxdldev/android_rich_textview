@@ -1,0 +1,3 @@
+rootProject.name = "android_rich_textview"
+include ':app'
+include ':lib_rich_textview'

@@ -1,0 +1,4 @@
+<resources>
+    <string name="collapse">收起  ↑</string>
+    <string name="expand">展开  ↓</string>
+</resources>
